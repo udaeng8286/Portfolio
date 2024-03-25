@@ -48,29 +48,41 @@ const Container = styled.div`
   border: 2px solid #cecece;
   box-shadow: 2px 2px 12px 4px rgba(0, 0, 0, 0.5);
   gap: 0.5rem;
+
+  @media (max-width: 480px) {
+    width: 100%;
+    padding: 1rem;
+  }
 `;
 
 const Name = styled.text`
   font-size: 40px;
+
+  @media (max-width: 480px) {
+    font-size: 28px;
+  }
 `;
 
-const Role = styled.text`
-  font-size: 20px;
-`;
+const Role = styled.text``;
 
 const ProfileImg = styled.img`
   width: 100%;
   border-radius: 20px;
+
+  @media (max-width: 480px) {
+    max-width: 182px;
+  }
 `;
 
-const Email = styled.text`
-  font-size: 20px;
-`;
+const Email = styled.text``;
 
 const ButtonSection = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 480px) {
+    max-width: 182px;
+  }
 `;
 
 const IconWrapper = styled.div`
@@ -85,5 +97,9 @@ const IconWrapper = styled.div`
   margin-top: 1rem;
   &:hover {
     background-color: #ffffff80;
+  }
+  @media (max-width: 480px) {
+    width: 40px;
+    height: 40px;
   }
 `;

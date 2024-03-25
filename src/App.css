@@ -10,6 +10,15 @@
   height: 100vh;
   display: flex;
   align-items: center;
+  font-size: 20px;
+}
+
+@media (max-width: 480px) {
+  .App {
+    flex-direction: column;
+    padding: 2rem 2rem;
+    font-size: 16px;
+  }
 }
 
 .background {
