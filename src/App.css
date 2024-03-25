@@ -5,6 +5,13 @@
   font-family: "Noto Sans KR", sans-serif;
 }
 
+.App {
+  padding: 0 2rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
 .background {
   position: fixed;
   top: 0;
