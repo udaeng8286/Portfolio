@@ -1,5 +1,6 @@
 import React from "react";
-import "./App.css"; // CSS 파일 임포트
+import "./App.css";
+import ProfileCard from "./components/ProfileCard";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <video className="background" autoPlay loop muted playsInline>
         <source src="/public/assets/background.mp4" type="video/mp4" />
       </video>
+      <ProfileCard />
     </div>
   );
 }
