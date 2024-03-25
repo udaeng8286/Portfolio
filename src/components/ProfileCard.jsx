@@ -12,7 +12,9 @@ const ProfileCard = () => {
     window.open("https://growdaeng.tistory.com/", "_blank");
   };
 
-  const handleMailClick = () => {};
+  const handleMailClick = () => {
+    window.open("mailto:udaenglvup@gmail.com?subject=송유정님에게 문의");
+  };
 
   return (
     <Container>
