@@ -50,6 +50,10 @@ const Container = styled.div`
   box-shadow: 2px 2px 12px 4px rgba(0, 0, 0, 0.5);
   gap: 0.5rem;
 
+  @media (max-width: 1366px) {
+    margin-left: 0;
+  }
+
   @media (max-width: 480px) {
     width: 100%;
     padding: 1rem;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-scroll";
 
-const Nav = () => {
+const RelativeNav = () => {
   const menuList = [
     { item: "Introduce" },
     { item: "Skills" },
@@ -26,15 +26,16 @@ const Nav = () => {
     </Container>
   );
 };
-export default Nav;
+export default RelativeNav;
 
 const Container = styled.div`
-  width: 240px;
-  height: 100vh;
+  width: 80%;
+  height: 60px;
   background-color: rgba(0, 0, 0, 0.3);
   display: flex;
+  border-radius: 50px;
 
-  @media (max-width: 1366px) {
+  @media (min-width: 1366px) {
     display: none;
   }
 `;
@@ -42,7 +43,6 @@ const Container = styled.div`
 const MenuList = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
