@@ -2,6 +2,7 @@ import "./App.css";
 import ProfileCard from "./components/ProfileCard";
 import Nav from "./components/Nav";
 import RelativeNav from "./components/RelativeNav";
+import Intro from "./pages/Intro";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       </video>
       <RelativeNav />
       <ProfileCard />
+      <Intro />
       <Nav />
     </div>
   );

@@ -29,12 +29,12 @@ const Nav = () => {
 export default Nav;
 
 const Container = styled.div`
-  width: 240px;
+  width: 268px;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
   display: flex;
 
-  @media (max-width: 1366px) {
+  @media (max-width: 840px) {
     display: none;
   }
 `;
