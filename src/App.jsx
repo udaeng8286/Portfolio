@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import ProfileCard from "./components/ProfileCard";
+import Nav from "./components/Nav";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <source src="/public/assets/background.mp4" type="video/mp4" />
       </video>
       <ProfileCard />
+      <Nav />
     </div>
   );
 }

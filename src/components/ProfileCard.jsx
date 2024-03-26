@@ -39,6 +39,7 @@ const ProfileCard = () => {
 export default ProfileCard;
 
 const Container = styled.div`
+  margin-left: 2rem;
   padding: 2rem;
   width: 300px;
   display: flex;
