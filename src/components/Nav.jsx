@@ -56,4 +56,7 @@ const MenuItem = styled(Link)`
   &:hover {
     color: #ffffff;
   }
+  &.active {
+    color: #ffffff;
+  }
 `;
