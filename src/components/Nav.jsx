@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 
 const Nav = () => {
   const menuList = [
-    { item: "Introduce" },
+    { item: "Intro" },
     { item: "Skills" },
     { item: "Project" },
     { item: "Experience" },

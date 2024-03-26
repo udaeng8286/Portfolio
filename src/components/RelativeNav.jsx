@@ -9,7 +9,7 @@ import {
 
 const RelativeNav = () => {
   const menuList = [
-    { item: "Introduce", icon: <IoPerson /> },
+    { item: "Intro", icon: <IoPerson /> },
     { item: "Skills", icon: <IoBuild /> },
     { item: "Project", icon: <IoDocumentsOutline /> },
     { item: "Experience", icon: <IoBriefcase /> },
