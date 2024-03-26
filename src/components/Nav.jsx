@@ -1,18 +1,26 @@
 import styled from "styled-components";
+import { Link } from "react-scroll";
 
 const Nav = () => {
   const menuList = [
-    { text: "My Intro", link: "/intro" },
-    { text: "Skills", link: "/skills" },
-    { text: "Project", link: "/project" },
-    { text: "Experience", link: "/experience" },
+    { item: "Introduce" },
+    { item: "Skills" },
+    { item: "Project" },
+    { item: "Experience" },
   ];
 
   return (
     <Container>
       <MenuList>
         {menuList.map((menuItem) => (
-          <MenuItem key={menuItem.text}>{menuItem.text}</MenuItem>
+          <MenuItem
+            key={menuItem.item}
+            to={menuItem.item}
+            smooth={true}
+            duration={500}
+          >
+            {menuItem.item}
+          </MenuItem>
         ))}
       </MenuList>
     </Container>
@@ -36,7 +44,12 @@ const MenuList = styled.div`
   gap: 2rem;
 `;
 
-const MenuItem = styled.div`
+const MenuItem = styled(Link)`
   cursor: pointer;
-  color: #cbcbcb;
+  color: #929292;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  &:hover {
+    color: #ffffff;
+  }
 `;
