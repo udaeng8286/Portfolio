@@ -39,6 +39,8 @@ const ProfileCard = () => {
 export default ProfileCard;
 
 const Container = styled.div`
+  position: fixed;
+  left: 0;
   margin-left: 2rem;
   padding: 2rem;
   width: 300px;
@@ -50,8 +52,9 @@ const Container = styled.div`
   box-shadow: 2px 2px 12px 4px rgba(0, 0, 0, 0.5);
   gap: 0.5rem;
 
-  @media (max-width: 1366px) {
+  @media (max-width: 840px) {
     margin-left: 0;
+    position: relative;
   }
 
   @media (max-width: 480px) {

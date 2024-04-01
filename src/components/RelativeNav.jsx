@@ -9,7 +9,7 @@ import {
 
 const RelativeNav = () => {
   const menuList = [
-    { item: "Introduce", icon: <IoPerson /> },
+    { item: "Intro", icon: <IoPerson /> },
     { item: "Skills", icon: <IoBuild /> },
     { item: "Project", icon: <IoDocumentsOutline /> },
     { item: "Experience", icon: <IoBriefcase /> },
@@ -42,7 +42,7 @@ const Container = styled.div`
   display: flex;
   border-radius: 50px;
   padding: 2rem;
-  @media (min-width: 1366px) {
+  @media (min-width: 840px) {
     display: none;
   }
 

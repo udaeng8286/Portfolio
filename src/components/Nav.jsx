@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 
 const Nav = () => {
   const menuList = [
-    { item: "Introduce" },
+    { item: "Intro" },
     { item: "Skills" },
     { item: "Project" },
     { item: "Experience" },
@@ -29,12 +29,14 @@ const Nav = () => {
 export default Nav;
 
 const Container = styled.div`
-  width: 240px;
+  width: 268px;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
   display: flex;
-
-  @media (max-width: 1366px) {
+  position: fixed;
+  top: 0;
+  right: 0;
+  @media (max-width: 840px) {
     display: none;
   }
 `;
