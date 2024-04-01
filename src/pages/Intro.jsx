@@ -3,7 +3,7 @@ import Typewriter from "typewriter-effect";
 
 const Intro = () => {
   return (
-    <Container>
+    <Container id="Intro">
       <MainIntro>
         <Text1>안녕하세요</Text1>
         <Text1>
@@ -38,7 +38,10 @@ export default Intro;
 
 const Container = styled.div`
   width: 100%;
-  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 9rem 0;
   @media (max-width: 1366px) {
     width: 90%;
     padding: 0;
@@ -88,4 +91,6 @@ const StyledTypewriterWrapper = styled.div`
 
 const StyledTypewriter = styled(Typewriter)``;
 
-const SubIntro = styled.div``;
+const SubIntro = styled.div`
+  height: 100%;
+`;

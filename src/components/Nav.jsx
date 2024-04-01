@@ -33,7 +33,9 @@ const Container = styled.div`
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
   display: flex;
-
+  position: fixed;
+  top: 0;
+  right: 0;
   @media (max-width: 840px) {
     display: none;
   }
