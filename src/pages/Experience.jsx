@@ -1,42 +1,47 @@
 import styled from "styled-components";
 
 const Experience = () => {
+  const experiences = [
+    {
+      subTitle: "넥스트스토리 인턴",
+      year: "2020.07 ~ 2020.08 / 2021.01 ~ 2021.02",
+      contents: [
+        "- 여름, 여행 관련 자료 조사 및 카드 뉴스 제작",
+        "- 겨울, 여행 관련 자료 조사 및 게임 스토리, 캐릭터, UI 디자인 및 제작",
+      ],
+    },
+    {
+      subTitle: "넥스트스토리 인턴",
+      year: "2020.07 ~ 2020.08 / 2021.01 ~ 2021.02",
+      contents: [
+        "- 여름, 여행 관련 자료 조사 및 카드 뉴스 제작",
+        "- 겨울, 여행 관련 자료 조사 및 게임 스토리, 캐릭터, UI 디자인 및 제작",
+      ],
+    },
+    {
+      subTitle: "넥스트스토리 인턴",
+      year: "2020.07 ~ 2020.08 / 2021.01 ~ 2021.02",
+      contents: [
+        "- 여름, 여행 관련 자료 조사 및 카드 뉴스 제작",
+        "- 겨울, 여행 관련 자료 조사 및 게임 스토리, 캐릭터, UI 디자인 및 제작",
+      ],
+    },
+  ];
+
   return (
     <Container id="Experience">
       <Title>Experience</Title>
-      <ExperienceContainer>
-        <ExperienceWrapper>
-          <SubTitle>넥스트스토리 인턴</SubTitle>
-          <Year>2020.07 ~ 2020.08 / 2021.01 ~ 2021.02</Year>
-          <Content>- 여름, 여행 관련 자료 조사 및 카드 뉴스 제작</Content>
-          <Content>
-            - 겨울, 여행 관련 자료 조사 및 게임 스토리, 캐릭터, UI 디자인 및
-            제작
-          </Content>
-        </ExperienceWrapper>
-      </ExperienceContainer>
-      <ExperienceContainer>
-        <ExperienceWrapper>
-          <SubTitle>넥스트스토리 인턴</SubTitle>
-          <Year>2020.07 ~ 2020.08 / 2021.01 ~ 2021.02</Year>
-          <Content>- 여름, 여행 관련 자료 조사 및 카드 뉴스 제작</Content>
-          <Content>
-            - 겨울, 여행 관련 자료 조사 및 게임 스토리, 캐릭터, UI 디자인 및
-            제작
-          </Content>
-        </ExperienceWrapper>
-      </ExperienceContainer>
-      <ExperienceContainer>
-        <ExperienceWrapper>
-          <SubTitle>넥스트스토리 인턴</SubTitle>
-          <Year>2020.07 ~ 2020.08 / 2021.01 ~ 2021.02</Year>
-          <Content>- 여름, 여행 관련 자료 조사 및 카드 뉴스 제작</Content>
-          <Content>
-            - 겨울, 여행 관련 자료 조사 및 게임 스토리, 캐릭터, UI 디자인 및
-            제작
-          </Content>
-        </ExperienceWrapper>
-      </ExperienceContainer>
+      {experiences.map((exp, index) => (
+        <ExperienceContainer key={index}>
+          <ExperienceWrapper>
+            <SubTitle>{exp.subTitle}</SubTitle>
+            <Year>{exp.year}</Year>
+            {exp.contents.map((content, idx) => (
+              <Content key={idx}>{content}</Content>
+            ))}
+          </ExperienceWrapper>
+        </ExperienceContainer>
+      ))}
     </Container>
   );
 };
