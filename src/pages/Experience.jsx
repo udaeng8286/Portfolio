@@ -38,7 +38,6 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 9rem 0;
 `;
 
 const ContentSection = styled.div`
@@ -60,6 +59,9 @@ const Title = styled.div`
   font-size: 32px;
   font-weight: bold;
   margin: 2rem 0;
+  /* &::first-letter {
+    color: #f5d729;
+  } */
 `;
 
 const ContentWrapper = styled.div`
@@ -67,7 +69,7 @@ const ContentWrapper = styled.div`
   flex-direction: column;
   gap: 0.2rem;
   padding: 0 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 `;
 const SubTitle = styled.div`
   font-size: 26px;
