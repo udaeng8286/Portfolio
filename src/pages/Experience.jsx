@@ -1,20 +1,33 @@
 import styled from "styled-components";
 import experienceData from "../datas/experiences.json";
+import awardData from "../datas/awards.json";
 
 const Experience = () => {
   return (
     <Container id="Experience">
       <Title>Experience</Title>
       {experienceData.map((exp, index) => (
-        <ExperienceContainer key={index}>
-          <ExperienceWrapper>
+        <ContentSection key={index}>
+          <ContentWrapper>
             <SubTitle>{exp.subTitle}</SubTitle>
             <Year>{exp.year}</Year>
             {exp.contents.map((content, idx) => (
               <Content key={idx}>{content}</Content>
             ))}
-          </ExperienceWrapper>
-        </ExperienceContainer>
+          </ContentWrapper>
+        </ContentSection>
+      ))}
+      <Title>Awards</Title>
+      {awardData.map((exp, index) => (
+        <ContentSection key={index}>
+          <ContentWrapper>
+            <SubTitle>{exp.subTitle}</SubTitle>
+            <Year>{exp.year}</Year>
+            {exp.contents.map((content, idx) => (
+              <Content key={idx}>{content}</Content>
+            ))}
+          </ContentWrapper>
+        </ContentSection>
       ))}
     </Container>
   );
@@ -28,11 +41,10 @@ const Container = styled.div`
   padding: 9rem 0;
 `;
 
-const ExperienceContainer = styled.div`
+const ContentSection = styled.div`
   position: relative;
   width: 100%;
   border-left: 2px solid;
-  background-color: gray;
   &::before {
     content: "";
     position: absolute;
@@ -47,14 +59,15 @@ const ExperienceContainer = styled.div`
 const Title = styled.div`
   font-size: 32px;
   font-weight: bold;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 `;
 
-const ExperienceWrapper = styled.div`
+const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  padding: 1.5rem;
+  padding: 0 1.5rem;
+  margin-bottom: 2rem;
 `;
 const SubTitle = styled.div`
   font-size: 26px;
