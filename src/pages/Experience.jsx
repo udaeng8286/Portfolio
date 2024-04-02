@@ -1,37 +1,11 @@
 import styled from "styled-components";
+import experienceData from "../datas/experiences.json";
 
 const Experience = () => {
-  const experiences = [
-    {
-      subTitle: "넥스트스토리 인턴",
-      year: "2020.07 ~ 2020.08 / 2021.01 ~ 2021.02",
-      contents: [
-        "- 여름, 여행 관련 자료 조사 및 카드 뉴스 제작",
-        "- 겨울, 여행 관련 자료 조사 및 게임 스토리, 캐릭터, UI 디자인 및 제작",
-      ],
-    },
-    {
-      subTitle: "넥스트스토리 인턴",
-      year: "2020.07 ~ 2020.08 / 2021.01 ~ 2021.02",
-      contents: [
-        "- 여름, 여행 관련 자료 조사 및 카드 뉴스 제작",
-        "- 겨울, 여행 관련 자료 조사 및 게임 스토리, 캐릭터, UI 디자인 및 제작",
-      ],
-    },
-    {
-      subTitle: "넥스트스토리 인턴",
-      year: "2020.07 ~ 2020.08 / 2021.01 ~ 2021.02",
-      contents: [
-        "- 여름, 여행 관련 자료 조사 및 카드 뉴스 제작",
-        "- 겨울, 여행 관련 자료 조사 및 게임 스토리, 캐릭터, UI 디자인 및 제작",
-      ],
-    },
-  ];
-
   return (
     <Container id="Experience">
       <Title>Experience</Title>
-      {experiences.map((exp, index) => (
+      {experienceData.map((exp, index) => (
         <ExperienceContainer key={index}>
           <ExperienceWrapper>
             <SubTitle>{exp.subTitle}</SubTitle>
@@ -48,7 +22,6 @@ const Experience = () => {
 export default Experience;
 
 const Container = styled.div`
-  background-color: plum;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -81,10 +54,10 @@ const ExperienceWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  padding: 1rem;
+  padding: 1.5rem;
 `;
 const SubTitle = styled.div`
-  font-size: 28px;
+  font-size: 26px;
   font-weight: bold;
 `;
 const Year = styled.div``;
