@@ -4,7 +4,9 @@ import Nav from "./components/Nav";
 import RelativeNav from "./components/RelativeNav";
 import Intro from "./pages/Intro";
 import Skills from "./pages/Skills";
+import Project from "./pages/Project";
 import Experience from "./pages/Experience";
+
 function App() {
   return (
     <div className="App">
@@ -20,6 +22,7 @@ function App() {
       <div className="main-content">
         <Intro />
         <Skills />
+        <Project />
         <Experience />
       </div>
     </div>
