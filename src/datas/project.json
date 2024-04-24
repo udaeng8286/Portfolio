@@ -22,7 +22,7 @@
   },
   {
     "title": "PETALK",
-    "img": ["../../public/images/Mbti1.png", "../../public/images/Mbti2.png"],
+    "img": "../../public/images/Petalk.png",
     "content": "바쁜 일상을 살아가는 사람들을 위한 애완동물 산책 및 돌봄 서비스 플랫폼입니다.",
     "start": "2024.01.09",
     "end": "2024.03.06",
