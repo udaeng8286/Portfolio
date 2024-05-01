@@ -1,18 +1,36 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import DonutChart from "../components/DonutChart";
 import skillData from "../datas/skills.json";
 
 const Skills = () => {
+  const [animate, setAnimate] = useState(false);
+  const skillsRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const skillsTop = skillsRef.current.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (skillsTop < windowHeight) {
+        setAnimate(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Container id="Skills">
+    <Container id="Skills" ref={skillsRef}>
       <Title>Skills</Title>
       <SkillsContainer>
         {skillData.map((item, index) => (
           <SkillChart key={index}>
-            <DonutChart value={item.value} />
+            <DonutChart value={item.value} animate={animate} />
             <SkillLogo src={item.logo} alt={item.skill} />
-            {/* <SkillName>{item.skill}</SkillName> */}
           </SkillChart>
         ))}
       </SkillsContainer>
@@ -25,6 +43,7 @@ export default Skills;
 const Container = styled.div`
   width: 100%;
   height: 100vh;
+  padding: 9rem 0;
 `;
 
 const SkillsContainer = styled.div`
@@ -44,16 +63,6 @@ const Title = styled.div`
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 10px;
-`;
-
-const SkillName = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
 `;
 
 const SkillLogo = styled.img`

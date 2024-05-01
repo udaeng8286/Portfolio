@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-const DonutChart = ({ value }) => {
+const DonutChart = ({ value, animate }) => {
   const [dashArray, setDashArray] = useState("0 400");
 
   useEffect(() => {
-    const circumference = 2 * Math.PI * 64;
-    const progress = value / 100;
-    const filledLength = circumference * progress;
-    const emptyLength = circumference - filledLength;
-    setDashArray(`${filledLength} ${emptyLength}`);
-  }, [value]);
+    if (animate) {
+      const circumference = 2 * Math.PI * 64;
+      const progress = value / 100;
+      const filledLength = circumference * progress;
+      const emptyLength = circumference - filledLength;
+      setDashArray(`${filledLength} ${emptyLength}`);
+    }
+  }, [value, animate]);
 
   return (
     <Svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
       <g transform="rotate(-90, 100, 100)">
-        {" "}
-        {/* 시계 방향으로 90도 회전 */}
         <circle
           cx="100"
           cy="100"
