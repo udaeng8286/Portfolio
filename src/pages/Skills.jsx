@@ -1,60 +1,53 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import DonutChart from "../components/DonutChart";
+import skillData from "../datas/skills.json";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Skills = () => {
-  const skillsList = [
-    {
-      skill: "HTML",
-      value: 90,
-      logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-plain-wordmark.svg",
-    },
-    {
-      skill: "CSS",
-      value: 90,
-      logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-plain-wordmark.svg",
-    },
-    {
-      skill: "JavaScript",
-      value: 85,
-      logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg",
-    },
-    {
-      skill: "React",
-      value: 80,
-      logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg",
-    },
-    {
-      skill: "TypeScript",
-      value: 70,
-      logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg",
-    },
-    {
-      skill: "Styled-Components",
-      value: 90,
-      logo: "https://raw.githubusercontent.com/styled-components/brand/master/styled-components.png",
-    },
-    {
-      skill: "Axios",
-      value: 80,
-      logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/axios/axios-plain-wordmark.svg",
-    },
-    {
-      skill: "Redux",
-      value: 30,
-      logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg",
-    },
-  ];
+  const [animate, setAnimate] = useState(false);
+  const skillsRef = useRef(null);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setAnimate(true);
+        }
+      });
+    });
+
+    if (skillsRef.current) {
+      observer.observe(skillsRef.current);
+    }
+
+    return () => {
+      if (skillsRef.current) {
+        observer.unobserve(skillsRef.current);
+      }
+    };
+  }, []);
   return (
-    <Container id="Skills">
+    <Container
+      id="Skills"
+      ref={skillsRef}
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <Title>Skills</Title>
       <SkillsContainer>
-        {skillsList.map((item, index) => (
+        {skillData.map((item, index) => (
           <SkillChart key={index}>
-            <DonutChart value={item.value} />
+            <DonutChart value={item.value} animate={animate} />{" "}
             <SkillLogo src={item.logo} alt={item.skill} />
-            {/* <SkillName>{item.skill}</SkillName> */}
           </SkillChart>
         ))}
       </SkillsContainer>
@@ -66,17 +59,24 @@ export default Skills;
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  padding: 10rem 0;
 `;
 
 const SkillsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  gap: 3rem;
+  max-width: 880px;
+  margin: 0 auto;
 `;
 
 const SkillChart = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 160px;
   height: 160px;
   position: relative;
@@ -88,21 +88,11 @@ const Title = styled.div`
   margin-bottom: 10px;
 `;
 
-const SkillName = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-`;
-
 const SkillLogo = styled.img`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
 `;

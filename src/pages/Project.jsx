@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import projectData from "../datas/project.json";
 import { BsGithub } from "react-icons/bs";
 import { FaLink } from "react-icons/fa6";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Project = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  }, []);
+
   return (
-    <Container id="Project">
+    <Container id="Project" data-aos="fade-up" data-aos-duration="1000">
       <Title>Project</Title>
       {projectData.map((project, index) => (
-        <ProjectContainer key={index}>
+        <ProjectContainer
+          key={index}
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
           {Array.isArray(project.img) ? (
             <DoubleProjectImgs>
               {project.img.map((img, imgIndex) => (
@@ -122,10 +135,10 @@ const TechContiner = styled.div`
 const Tech = styled.div`
   display: flex;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.3);
   width: auto;
   border-radius: 20px;
-  padding: 0 1rem;
+  padding: 0.1remdiz 1rem;
 `;
 
 const WorkContainer = styled.div`
