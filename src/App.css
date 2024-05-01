@@ -64,6 +64,12 @@
     gap: 4rem;
     height: 100vh;
   }
+
+  .side-content {
+    display: flex;
+    align-items: center;
+    margin-top: 5rem;
+  }
 }
 
 body {
