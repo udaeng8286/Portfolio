@@ -2,10 +2,19 @@ import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import DonutChart from "../components/DonutChart";
 import skillData from "../datas/skills.json";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Skills = () => {
   const [animate, setAnimate] = useState(false);
   const skillsRef = useRef(null);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -26,14 +35,18 @@ const Skills = () => {
       }
     };
   }, []);
-
   return (
-    <Container id="Skills" ref={skillsRef}>
+    <Container
+      id="Skills"
+      ref={skillsRef}
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <Title>Skills</Title>
       <SkillsContainer>
         {skillData.map((item, index) => (
           <SkillChart key={index}>
-            <DonutChart value={item.value} animate={animate} />
+            <DonutChart value={item.value} animate={animate} />{" "}
             <SkillLogo src={item.logo} alt={item.skill} />
           </SkillChart>
         ))}
@@ -46,17 +59,24 @@ export default Skills;
 
 const Container = styled.div`
   width: 100%;
-  padding: 9rem 0;
+  padding: 10rem 0;
 `;
 
 const SkillsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  gap: 3rem;
+  max-width: 880px;
+  margin: 0 auto;
 `;
 
 const SkillChart = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 160px;
   height: 160px;
   position: relative;
@@ -73,6 +93,6 @@ const SkillLogo = styled.img`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
 `;

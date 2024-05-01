@@ -2,37 +2,39 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const DonutChart = ({ value, animate }) => {
-  const [dashArray, setDashArray] = useState("0 400");
+  const [dashOffset, setDashOffset] = useState(0);
+  const radius = 80; // 반지름 값 조정
 
   useEffect(() => {
     if (animate) {
-      const circumference = 2 * Math.PI * 64;
+      const circumference = 2 * Math.PI * radius;
       const progress = value / 100;
       const filledLength = circumference * progress;
       const emptyLength = circumference - filledLength;
-      setDashArray(`${filledLength} ${emptyLength}`);
+      setDashOffset(circumference - filledLength); // 시작점 변경
     }
-  }, [value, animate]);
+  }, [value, animate, radius]);
 
   return (
     <Svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <g transform="rotate(-90, 100, 100)">
+      <g transform={`rotate(-90, 100, 100)`}>
         <circle
           cx="100"
           cy="100"
-          r="64"
-          fill="rgba(243, 243, 243, 0.5)"
+          r={radius}
+          fill="rgba(0, 0, 0, 0.3)"
           stroke="none"
-          strokeWidth="15"
+          strokeWidth="16"
         />
         <Circle
           cx="100"
           cy="100"
-          r="64"
+          r={radius}
           fill="none"
-          stroke="#e8c964"
-          strokeWidth="15"
-          strokeDasharray={dashArray}
+          stroke="#F3B95F"
+          strokeWidth="16"
+          strokeDasharray={`calc(2 * 3.14159 * ${radius}) calc(2 * 3.14159 * ${radius})`}
+          strokeDashoffset={dashOffset}
           strokeLinecap="round"
         />
       </g>
@@ -48,5 +50,5 @@ const Svg = styled.svg`
 `;
 
 const Circle = styled.circle`
-  transition: stroke-dasharray 1s ease-in-out;
+  transition: stroke-dashoffset 1s ease-in-out;
 `;

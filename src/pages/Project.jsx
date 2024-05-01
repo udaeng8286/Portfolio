@@ -9,18 +9,18 @@ import "aos/dist/aos.css";
 const Project = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // 애니메이션 지속 시간(ms)
-      once: false, // 한번만 애니메이션 실행
+      duration: 1000,
+      once: false,
     });
   }, []);
 
   return (
-    <Container id="Project">
+    <Container id="Project" data-aos="fade-up" data-aos-duration="1000">
       <Title>Project</Title>
       {projectData.map((project, index) => (
         <ProjectContainer
           key={index}
-          data-aos="fade-up"
+          data-aos="fade-right"
           data-aos-duration="1000"
         >
           {Array.isArray(project.img) ? (
@@ -135,10 +135,10 @@ const TechContiner = styled.div`
 const Tech = styled.div`
   display: flex;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.3);
   width: auto;
   border-radius: 20px;
-  padding: 0 1rem;
+  padding: 0.1remdiz 1rem;
 `;
 
 const WorkContainer = styled.div`
