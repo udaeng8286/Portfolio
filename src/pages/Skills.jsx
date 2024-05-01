@@ -8,18 +8,22 @@ const Skills = () => {
   const skillsRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const skillsTop = skillsRef.current.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setAnimate(true);
+        }
+      });
+    });
 
-      if (skillsTop < windowHeight) {
-        setAnimate(true);
-      }
-    };
+    if (skillsRef.current) {
+      observer.observe(skillsRef.current);
+    }
 
-    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      if (skillsRef.current) {
+        observer.unobserve(skillsRef.current);
+      }
     };
   }, []);
 
@@ -42,7 +46,6 @@ export default Skills;
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
   padding: 9rem 0;
 `;
 
