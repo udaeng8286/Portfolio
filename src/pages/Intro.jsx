@@ -11,6 +11,7 @@ const Intro = () => {
       once: false,
     });
   }, []);
+
   return (
     <Container id="Intro" data-aos="fade-left" data-aos-duration="1000">
       <MainIntro>
@@ -75,7 +76,7 @@ const Text1 = styled.div`
 `;
 
 const Text2 = styled.div`
-  color: #efc332;
+  color: #f3b95f;
   font-weight: bold;
 `;
 
