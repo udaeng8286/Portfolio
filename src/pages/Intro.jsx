@@ -50,8 +50,7 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 12rem 0;
+  padding: 9rem 0;
   @media (max-width: 1366px) {
     width: 90%;
     padding: 0;
