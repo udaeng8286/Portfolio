@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import projectData from "../datas/project.json";
 import { BsGithub } from "react-icons/bs";
 import { FaLink } from "react-icons/fa6";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Project = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // 애니메이션 지속 시간(ms)
+      once: false, // 한번만 애니메이션 실행
+    });
+  }, []);
+
   return (
     <Container id="Project">
       <Title>Project</Title>
       {projectData.map((project, index) => (
-        <ProjectContainer key={index}>
+        <ProjectContainer
+          key={index}
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           {Array.isArray(project.img) ? (
             <DoubleProjectImgs>
               {project.img.map((img, imgIndex) => (
