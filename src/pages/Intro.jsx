@@ -1,9 +1,18 @@
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Typewriter from "typewriter-effect";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Intro = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  }, []);
   return (
-    <Container id="Intro">
+    <Container id="Intro" data-aos="fade-left" data-aos-duration="1000">
       <MainIntro>
         <Text1>안녕하세요</Text1>
         <Text1>
