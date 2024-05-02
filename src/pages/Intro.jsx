@@ -1,9 +1,19 @@
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Typewriter from "typewriter-effect";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Intro = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  }, []);
+
   return (
-    <Container id="Intro">
+    <Container id="Intro" data-aos="fade-left" data-aos-duration="1000">
       <MainIntro>
         <Text1>안녕하세요</Text1>
         <Text1>
@@ -40,8 +50,7 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 12rem 0;
+  padding: 9rem 0;
   @media (max-width: 1366px) {
     width: 90%;
     padding: 0;
@@ -66,7 +75,7 @@ const Text1 = styled.div`
 `;
 
 const Text2 = styled.div`
-  color: #efc332;
+  color: #f3b95f;
   font-weight: bold;
 `;
 

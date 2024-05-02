@@ -1,10 +1,20 @@
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import experienceData from "../datas/experiences.json";
 import awardData from "../datas/awards.json";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Experience = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  }, []);
+
   return (
-    <Container id="Experience">
+    <Container id="Experience" data-aos="fade-left" data-aos-duration="1000">
       <Title>Experience</Title>
       {experienceData.map((exp, index) => (
         <ContentSection key={index}>
@@ -38,6 +48,7 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding: 3rem 0;
 `;
 
 const ContentSection = styled.div`
@@ -49,19 +60,19 @@ const ContentSection = styled.div`
     position: absolute;
     height: 15px;
     width: 15px;
-    background-color: #f5d729;
+    background-color: #f3b95f;
     border-radius: 50%;
     transform: translate(-50%, -50%);
   }
 `;
 
 const Title = styled.div`
-  font-size: 32px;
+  font-size: 36px;
   font-weight: bold;
   margin: 2rem 0;
-  /* &::first-letter {
-    color: #f5d729;
-  } */
+  &::first-letter {
+    color: #f3b95f;
+  }
 `;
 
 const ContentWrapper = styled.div`

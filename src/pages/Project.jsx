@@ -76,9 +76,12 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 32px;
+  font-size: 36px;
   font-weight: bold;
   margin-bottom: 3rem;
+  &::first-letter {
+    color: #f3b95f;
+  }
 `;
 
 const ProjectContainer = styled.div`
