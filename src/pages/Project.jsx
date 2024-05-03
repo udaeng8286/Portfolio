@@ -141,7 +141,7 @@ const Tech = styled.div`
   background-color: rgba(255, 255, 255, 0.3);
   width: auto;
   border-radius: 20px;
-  padding: 0.1remdiz 1rem;
+  padding: 0.1rem 1rem;
 `;
 
 const WorkContainer = styled.div`
