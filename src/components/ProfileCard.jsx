@@ -53,6 +53,7 @@ const Container = styled.div`
   gap: 0.5rem;
 
   @media (max-width: 840px) {
+    width: 100%;
     margin-left: 0;
     position: relative;
   }
@@ -77,7 +78,12 @@ const ProfileImg = styled.img`
   width: 100%;
   border-radius: 20px;
 
+  @media (max-width: 840px) {
+    width: 60%;
+  }
+
   @media (max-width: 480px) {
+    width: 50%;
     max-width: 182px;
   }
 `;
@@ -90,6 +96,10 @@ const ButtonSection = styled.div`
   justify-content: space-between;
   @media (max-width: 480px) {
     max-width: 182px;
+  }
+
+  @media (max-width: 840px) {
+    width: 60%;
   }
 `;
 
