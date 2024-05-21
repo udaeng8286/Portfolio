@@ -71,9 +71,9 @@ const RelativeNav = () => {
 export default RelativeNav;
 
 const MenuButton = styled.button`
-  position: fixed; /* 화면 기준으로 고정 */
-  right: 20px; /* 화면 우측에서 20px 떨어진 위치 */
-  top: 20px; /* 화면 상단에서 20px 떨어진 위치 */
+  position: fixed;
+  right: 20px;
+  top: 20px;
   width: 55px;
   height: 55px;
   border-radius: 50%;
@@ -82,11 +82,11 @@ const MenuButton = styled.button`
   color: #fff;
   font-size: 29px;
   z-index: 99999;
-  display: flex; /* Flexbox 사용 */
-  justify-content: center; /* 수평 가운데 정렬 */
-  align-items: center; /* 수직 가운데 정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  @media (min-width: 840px) {
+  @media (min-width: 1400px) {
     display: none;
   }
 `;
@@ -100,7 +100,7 @@ const Container = styled.div`
   top: ${({ showMobileMenu }) => (showMobileMenu ? "95px" : "20px")};
   right: 20px;
   z-index: 99998;
-  @media (min-width: 840px) {
+  @media (min-width: 1400px) {
     display: none;
   }
 `;

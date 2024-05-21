@@ -52,7 +52,7 @@ const Container = styled.div`
   box-shadow: 2px 2px 12px 4px rgba(0, 0, 0, 0.5);
   gap: 0.5rem;
 
-  @media (max-width: 840px) {
+  @media (max-width: 1400px) {
     width: 100%;
     margin-left: 0;
     position: relative;
