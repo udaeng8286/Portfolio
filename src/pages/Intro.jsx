@@ -105,6 +105,9 @@ const StyledTypewriter = styled(Typewriter)``;
 
 const SubIntro = styled.div`
   height: 100%;
+  @media (max-width: 1400px) {
+    font-size: 20px;
+  }
 `;
 
 const Br = styled.div`
