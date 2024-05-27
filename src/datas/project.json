@@ -64,8 +64,8 @@
       "- 전체적인 UI 및 레이아웃 구현",
       "- YouTube API를 활용한 영상 댓글 좋아요 순 정렬 기능 구현"
     ],
-    "demo": "http://toyporjects3.s3-website.ap-northeast-2.amazonaws.com/",
-    "git": "https://github.com/udaeng8286/SPYAIR-Fansite-Project"
+    "demo": "https://youtube-liked-comment.vercel.app/",
+    "git": "https://github.com/udaeng8286/Youtube-Liked-Comment"
   },
   {
     "title": "주술회전 MBTI 테스트",
