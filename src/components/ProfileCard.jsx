@@ -60,7 +60,7 @@ const Container = styled.div`
 
   @media (max-width: 480px) {
     width: 100%;
-    padding: 1rem;
+    padding: 3rem;
   }
 `;
 
@@ -72,34 +72,51 @@ const Name = styled.text`
   }
 `;
 
-const Role = styled.text``;
+const Role = styled.text`
+  @media (max-width: 1400px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
+`;
 
 const ProfileImg = styled.img`
   width: 100%;
   border-radius: 20px;
 
-  @media (max-width: 840px) {
+  @media (max-width: 1400px) {
     width: 60%;
   }
 
   @media (max-width: 480px) {
-    width: 50%;
+    width: 100%;
     max-width: 182px;
   }
 `;
 
-const Email = styled.text``;
+const Email = styled.text`
+  @media (max-width: 1400px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
+`;
 
 const ButtonSection = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  @media (max-width: 480px) {
-    max-width: 182px;
-  }
-
-  @media (max-width: 840px) {
+  margin-top: 1rem;
+  @media (max-width: 1400px) {
     width: 60%;
+  }
+  @media (max-width: 480px) {
+    width: 100%;
+    margin-top: 0.2rem;
   }
 `;
 
@@ -112,7 +129,7 @@ const IconWrapper = styled.div`
   border-radius: 50%;
   background-color: transparent;
   border: 2px solid white;
-  margin-top: 1rem;
+
   &:hover {
     background-color: #ffffff80;
   }
