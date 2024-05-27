@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const DonutChart = ({ value, animate }) => {
   const [dashOffset, setDashOffset] = useState(0);
-  const radius = 80; // 반지름 값 조정
+  const radius = 80;
 
   useEffect(() => {
     if (animate) {
@@ -11,7 +11,7 @@ const DonutChart = ({ value, animate }) => {
       const progress = value / 100;
       const filledLength = circumference * progress;
       const emptyLength = circumference - filledLength;
-      setDashOffset(circumference - filledLength); // 시작점 변경
+      setDashOffset(circumference - filledLength);
     }
   }, [value, animate, radius]);
 
