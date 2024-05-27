@@ -33,13 +33,20 @@ const Intro = () => {
         </Text1>
       </MainIntro>
       <SubIntro>
-        코드 리뷰와 팀원과의 회의를 통해 다양한 개발자들의 시각을 이해하고
-        소통하는 것을 즐깁니다. <br />
-        도전적이고 흥미로운 일에 대해 두려움 없이 실행해나가며, 항상 새로운 것을
-        배우고자 하는 열정을 가지고 있습니다.
-        <br />
-        “긍정은 부정을 이긴다.” 항상 긍정적인 마인드와 에너지로 팀에 가치있는
-        개발자가 되겠습니다.
+        <Br>
+          {" "}
+          코드 리뷰와 팀원과의 회의를 통해 다양한 개발자들의 시각을 이해하고
+          소통하는 것을 즐깁니다.
+        </Br>
+        <Br>
+          {" "}
+          도전적이고 흥미로운 일에 대해 두려움 없이 실행해나가며, 항상 새로운
+          것을 배우고자 하는 열정을 가지고 있습니다.
+        </Br>
+        <Br>
+          “긍정은 부정을 이긴다.” 항상 긍정적인 마인드와 에너지로 팀에 가치있는
+          개발자가 되겠습니다.
+        </Br>
       </SubIntro>
     </Container>
   );
@@ -51,12 +58,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 9rem 0;
-  @media (max-width: 1366px) {
-    width: 90%;
+  @media (max-width: 1400px) {
     padding: 0;
-  }
-  @media (max-width: 480px) {
-    width: 100%;
   }
 `;
 
@@ -102,4 +105,8 @@ const StyledTypewriter = styled(Typewriter)``;
 
 const SubIntro = styled.div`
   height: 100%;
+`;
+
+const Br = styled.div`
+  margin-bottom: 1rem;
 `;
