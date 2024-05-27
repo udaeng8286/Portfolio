@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <div className="background-overlay"></div>
       <video className="background" autoPlay loop muted playsInline>
-        <source src="/assets/background.mp4" type="video/mp4" />
+        <source src="/background.mp4" type="video/mp4" />
       </video>
       <RelativeNav />
       <div className="side-content">
