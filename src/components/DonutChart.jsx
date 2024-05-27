@@ -3,7 +3,18 @@ import styled from "styled-components";
 
 const DonutChart = ({ value, animate }) => {
   const [dashOffset, setDashOffset] = useState(0);
-  const radius = 80;
+  const [radius, setRadius] = useState(window.innerWidth <= 480 ? 60 : 80);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const newRadius = window.innerWidth <= 480 ? 70 : 80;
+      setRadius(newRadius);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     if (animate) {

@@ -70,7 +70,7 @@ const SkillsContainer = styled.div`
   max-width: 880px;
   margin: 0 auto;
   @media (max-width: 480px) {
-    gap: 1rem;
+    gap: 0.1rem;
   }
 `;
 
@@ -78,10 +78,6 @@ const SkillChart = styled.div`
   position: relative;
   width: 160px;
   height: 160px;
-  @media (max-width: 480px) {
-    width: 45%;
-    height: auto;
-  }
 `;
 
 const Title = styled.div`
