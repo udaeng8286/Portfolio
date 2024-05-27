@@ -36,7 +36,7 @@ const Container = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  @media (max-width: 840px) {
+  @media (max-width: 1400px) {
     display: none;
   }
 `;

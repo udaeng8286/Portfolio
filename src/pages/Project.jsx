@@ -40,16 +40,16 @@ const Project = () => {
               </Date>
             </TopContent>
             <Content>
-              <div>{project.content}</div>
+              <Text>{project.content}</Text>
             </Content>
-            <div> {project.member}</div>
-            <TechContiner>
+            <Text> {project.member}</Text>
+            <TechContainer>
               {project.techs.map((tech, index) => (
                 <Tech key={index}>{tech}</Tech>
               ))}
-            </TechContiner>
+            </TechContainer>
             <WorkContainer>
-              <div> 맡은 역할</div>
+              <Text> 맡은 역할</Text>
               {project.works.map((work, index) => (
                 <Work key={index}>{work}</Work>
               ))}
@@ -84,6 +84,12 @@ const Title = styled.div`
   }
 `;
 
+const Text = styled.div`
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
+`;
+
 const ProjectContainer = styled.div`
   width: 100%;
   margin-bottom: 3rem;
@@ -97,7 +103,7 @@ const DoubleProjectImgs = styled.div`
 
 const ProjectImg = styled.img`
   max-width: 100%;
-  height: 100%;
+  height: auto;
   border-radius: 20px;
 `;
 
@@ -120,28 +126,49 @@ const TopContent = styled.div`
   justify-content: space-between;
   align-items: end;
   margin-bottom: 1rem;
+  @media (max-width: 1400px) {
+    flex-direction: column;
+    align-items: start;
+    gap: 0.2rem;
+    margin-bottom: 0.3rem;
+  }
 `;
 
 const ProjectTitle = styled.div`
   font-size: 28px;
   font-weight: bold;
+  @media (max-width: 480px) {
+    font-size: 24px;
+  }
 `;
+
 const Date = styled.div`
   display: flex;
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
 `;
+
 const Content = styled.div``;
 
-const TechContiner = styled.div`
+const TechContainer = styled.div`
+  width: 100%;
   display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap;
 `;
+
 const Tech = styled.div`
   display: flex;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.3);
   width: auto;
   border-radius: 20px;
-  padding: 0.1remdiz 1rem;
+  padding: 0.1rem 1rem;
+
+  @media (max-width: 1400px) {
+    font-size: 16px;
+  }
 `;
 
 const WorkContainer = styled.div`
@@ -152,6 +179,9 @@ const WorkContainer = styled.div`
 
 const Work = styled.div`
   font-size: 18px;
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
 `;
 
 const LinkContainer = styled.div`
