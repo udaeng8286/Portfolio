@@ -48,7 +48,7 @@ const RelativeNav = () => {
         </MenuButton>
       )}
       {showMobileMenu && (
-        <Container ref={mobileMenuRef}>
+        <MobileMenu ref={mobileMenuRef}>
           <MenuList>
             {menuList.map((menuItem) => (
               <MenuItem
@@ -62,7 +62,7 @@ const RelativeNav = () => {
               </MenuItem>
             ))}
           </MenuList>
-        </Container>
+        </MobileMenu>
       )}
     </>
   );
@@ -91,7 +91,7 @@ const MenuButton = styled.button`
   }
 `;
 
-const Container = styled.div`
+const MobileMenu = styled.div`
   width: 90%;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.8);

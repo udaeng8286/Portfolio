@@ -3,39 +3,41 @@ import profileImg from "../../public/assets/profile.png";
 import { SiTistory } from "react-icons/si";
 import { BsGithub } from "react-icons/bs";
 import { MdMail } from "react-icons/md";
+
 const ProfileCard = () => {
-  const handleGithubClick = () => {
-    window.open("https://github.com/udaeng8286", "_blank");
-  };
-
-  const handleTistoryClick = () => {
-    window.open("https://growdaeng.tistory.com/", "_blank");
-  };
-
-  const handleMailClick = () => {
-    window.open("mailto:udaenglvup@gmail.com?subject=송유정님에게 문의");
+  const handleClick = (url) => {
+    window.open(url, "_blank");
   };
 
   return (
     <Container>
       <Name>Yu Jeong</Name>
       <Role>Front-end Development</Role>
-      <ProfileImg src={profileImg} alt="profile Image" />
+      <ProfileImg src={profileImg} alt="Profile Image" />
       <Email>udaenglvup@gmail.com</Email>
       <ButtonSection>
-        <IconWrapper onClick={handleGithubClick}>
+        <IconWrapper
+          onClick={() => handleClick("https://github.com/udaeng8286")}
+        >
           <BsGithub size={24} />
         </IconWrapper>
-        <IconWrapper onClick={handleTistoryClick}>
+        <IconWrapper
+          onClick={() => handleClick("https://growdaeng.tistory.com/")}
+        >
           <SiTistory size={16} />
         </IconWrapper>
-        <IconWrapper onClick={handleMailClick}>
+        <IconWrapper
+          onClick={() =>
+            handleClick("mailto:udaenglvup@gmail.com?subject=송유정님에게 문의")
+          }
+        >
           <MdMail size={24} />
         </IconWrapper>
       </ButtonSection>
     </Container>
   );
 };
+
 export default ProfileCard;
 
 const Container = styled.div`
@@ -64,7 +66,7 @@ const Container = styled.div`
   }
 `;
 
-const Name = styled.text`
+const Name = styled.div`
   font-size: 40px;
 
   @media (max-width: 480px) {
@@ -72,10 +74,8 @@ const Name = styled.text`
   }
 `;
 
-const Role = styled.text`
-  @media (max-width: 1400px) {
-    font-size: 20px;
-  }
+const Role = styled.div`
+  font-size: 20px;
 
   @media (max-width: 480px) {
     font-size: 16px;
@@ -96,10 +96,8 @@ const ProfileImg = styled.img`
   }
 `;
 
-const Email = styled.text`
-  @media (max-width: 1400px) {
-    font-size: 20px;
-  }
+const Email = styled.div`
+  font-size: 20px;
 
   @media (max-width: 480px) {
     font-size: 16px;
@@ -111,9 +109,11 @@ const ButtonSection = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
+
   @media (max-width: 1400px) {
     width: 60%;
   }
+
   @media (max-width: 480px) {
     width: 100%;
     margin-top: 0.2rem;
@@ -133,6 +133,7 @@ const IconWrapper = styled.div`
   &:hover {
     background-color: #ffffff80;
   }
+
   @media (max-width: 480px) {
     width: 40px;
     height: 40px;

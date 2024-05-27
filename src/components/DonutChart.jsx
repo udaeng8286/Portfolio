@@ -3,39 +3,38 @@ import styled from "styled-components";
 
 const DonutChart = ({ value, animate }) => {
   const [dashOffset, setDashOffset] = useState(0);
-  const radius = 80; // 반지름 값 조정
+  const [radius, setRadius] = useState(window.innerWidth <= 480 ? 60 : 80);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const newRadius = window.innerWidth <= 480 ? 70 : 80;
+      setRadius(newRadius);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     if (animate) {
       const circumference = 2 * Math.PI * radius;
       const progress = value / 100;
       const filledLength = circumference * progress;
-      const emptyLength = circumference - filledLength;
-      setDashOffset(circumference - filledLength); // 시작점 변경
+      setDashOffset(circumference - filledLength);
     }
   }, [value, animate, radius]);
 
   return (
     <Svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <g transform={`rotate(-90, 100, 100)`}>
-        <circle
+      <g transform="rotate(-90, 100, 100)">
+        <BackgroundCircle cx="100" cy="100" r={radius} />
+        <ProgressCircle
           cx="100"
           cy="100"
           r={radius}
-          fill="rgba(0, 0, 0, 0.3)"
-          stroke="none"
-          strokeWidth="16"
-        />
-        <Circle
-          cx="100"
-          cy="100"
-          r={radius}
-          fill="none"
-          stroke="#F3B95F"
-          strokeWidth="16"
-          strokeDasharray={`calc(2 * 3.14159 * ${radius}) calc(2 * 3.14159 * ${radius})`}
+          strokeDasharray={2 * Math.PI * radius}
           strokeDashoffset={dashOffset}
-          strokeLinecap="round"
         />
       </g>
     </Svg>
@@ -49,6 +48,16 @@ const Svg = styled.svg`
   height: 160px;
 `;
 
-const Circle = styled.circle`
+const BackgroundCircle = styled.circle`
+  fill: rgba(0, 0, 0, 0.4);
+  stroke: none;
+  stroke-width: 16;
+`;
+
+const ProgressCircle = styled.circle`
+  fill: none;
+  stroke: #f3b95f;
+  stroke-width: 16;
+  stroke-linecap: round;
   transition: stroke-dashoffset 1s ease-in-out;
 `;

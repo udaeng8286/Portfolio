@@ -14,9 +14,7 @@ const Skills = () => {
       duration: 1000,
       once: false,
     });
-  }, []);
 
-  useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -35,6 +33,7 @@ const Skills = () => {
       }
     };
   }, []);
+
   return (
     <Container
       id="Skills"
@@ -46,7 +45,7 @@ const Skills = () => {
       <SkillsContainer>
         {skillData.map((item, index) => (
           <SkillChart key={index}>
-            <DonutChart value={item.value} animate={animate} />{" "}
+            <DonutChart value={item.value} animate={animate} />
             <SkillLogo src={item.logo} alt={item.skill} />
           </SkillChart>
         ))}
@@ -71,22 +70,14 @@ const SkillsContainer = styled.div`
   max-width: 880px;
   margin: 0 auto;
   @media (max-width: 480px) {
-    gap: 1rem;
+    gap: 0.1rem;
   }
 `;
 
 const SkillChart = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   width: 160px;
   height: 160px;
-  position: relative;
-  @media (max-width: 480px) {
-    width: 45%;
-    height: auto;
-  }
 `;
 
 const Title = styled.div`
