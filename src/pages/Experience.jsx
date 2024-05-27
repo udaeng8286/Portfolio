@@ -85,6 +85,9 @@ const ContentWrapper = styled.div`
 const SubTitle = styled.div`
   font-size: 26px;
   font-weight: bold;
+  @media (max-width: 480px) {
+    font-size: 24px;
+  }
 `;
 const Year = styled.div``;
 const Content = styled.div``;
