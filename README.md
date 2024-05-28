@@ -8,7 +8,7 @@ React 포트폴리오 웹 사이트 제작
 
 # 배포 사이트
 
-[🐟 Live Demo](배포하고 나서 넣을 링크~,,,/)
+[🐟 Live Demo](https://portfolio-git-main-yu-jeong-songs-projects.vercel.app/)
 
 
 ## 기술 스택
