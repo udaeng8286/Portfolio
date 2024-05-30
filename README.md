@@ -1,5 +1,5 @@
 # Portfolio
-React 포트폴리오 웹 사이트 제작
+React 포트폴리오 웹 사이트
 
 ## 프로젝트 개요
 
